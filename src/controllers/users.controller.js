@@ -13,14 +13,20 @@ export const getUsers = async (req, res) => {
     res.status(200).json(users);
 }
 
-export const getUserById = (req, res) => {
-    
+export const getUserById = async (req, res) => {
+    const user = await User.findById(req.params.userId);
+    res.status(200).json(user);
 }
 
-export const updateUserById = (req, res) => {
-    
+export const updateUserById = async (req, res) => {
+    const updatedUser = await User.findByIdAndUpdate(req.params.userId, req.body, {
+        new: true
+    });
+    res.status(200).json(updatedUser);
 }
 
-export const deleteUserById = (req, res) => {
-    
+export const deleteUserById = async (req, res) => {
+    const {userId} = req.body
+    await User.findByIdAndDelete(userId);
+    res.status(204);
 }

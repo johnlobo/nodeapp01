@@ -1,10 +1,24 @@
 import {Schema, model} from 'mongoose'
 
 const userSchema = new Schema({
-    name: String,
-    password: String
+    name: { 
+        type: String,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        unique: true
+    },
+    roles: [{
+        ref: "Role",
+        type: Schema.Types.ObjectId
+    }]
 },{
-    timestamp: true,
+    timestamps: true,
     versionKey: false
 })
 

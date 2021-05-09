@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "f8c2136f-9a61-420a-b8f2-93f2359eba08",
+		"name": "nodeapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}:{{Port}}/users",
+					"host": [
+						"{{Domain}}"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{Domain}}:{{Port}}/users/60946564e44669d4d62e9b88",
+					"host": [
+						"{{Domain}}"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"users",
+						"60946564e44669d4d62e9b88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}:{{Port}}/users/60946564e44669d4d62e9b88",
+					"host": [
+						"{{Domain}}"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"users",
+						"60946564e44669d4d62e9b88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"johnlobo7\"\n}"
+				},
+				"url": {
+					"raw": "{{Domain}}:{{Port}}/api/users/60946564e44669d4d62e9b88",
+					"host": [
+						"{{Domain}}"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"api",
+						"users",
+						"60946564e44669d4d62e9b88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"johnlobo\",\n    \"password\": \"chinaski\"\n}"
+				},
+				"url": {
+					"raw": "{{Domain}}:{{Port}}/users",
+					"host": [
+						"{{Domain}}"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
